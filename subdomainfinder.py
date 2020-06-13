@@ -1,5 +1,6 @@
 import sys
 import dns.resolver
+import socket
 # ________________________________________________
 #|                                                |
 #|   DEDSEC HACKING GROUP ---->> CREATED BY F0OX  |
@@ -19,8 +20,8 @@ for linha in linhas:
 	try:
 		receive = dns.resolver.query(subdominio, 'a')
 		for resultado in receive:
-			print ("HOST ECONTRADO =======>>> " + subdominio)
-	except:
+			print ("HOST ECONTRADO =======>>> " + subdominio + " [IP: %s]")%(socket.gethostbyname(subdominio))
+	except: 
 		pass
 
 
